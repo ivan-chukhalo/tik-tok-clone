@@ -1,9 +1,15 @@
-import './App.css';
+import "./App.css";
+import Video from "./Video"
 
 function App() {
   return (
     <div className="app">
-     <h1>Tik-Tok clone</h1>
+      <div className="app__videos">
+        <Video />
+        <Video />
+        <Video />
+        <Video />
+      </div>
     </div>
   );
 }
