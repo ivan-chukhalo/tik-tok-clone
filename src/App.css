@@ -4,7 +4,7 @@ html{
 
 .app{
   height: 100vh;
-  border-color: black;
+  background-color: black;
   display: grid;
   place-items: center;
 }
@@ -12,6 +12,7 @@ html{
 .app__videos{
   position: relative;
   height: 800px;
+  border-radius: 20px;
   overflow: scroll;
   width: 80%;
   max-width: 500px; /* for wide devices */
