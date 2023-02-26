@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./Video.css";
+import VideoFooter from "./VideoFooter"
 
 export default function Video() {
     const [playing, setPlaying] = React.useState(false)
@@ -23,8 +24,11 @@ export default function Video() {
         ref={videoRef}
         onClick={onVideoPress}
       ></video>
-
-      {/* <VideoFooter /> */}
+      <VideoFooter 
+        channel="ivanChukhalo" 
+        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        song="Оксана Пекун - Я така ще молода"
+      />
       {/* <VideoSidebar /> */}
     </div>
   );
