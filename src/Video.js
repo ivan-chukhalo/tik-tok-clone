@@ -27,7 +27,7 @@ export default function Video() {
       ></video>
       <VideoFooter
         channel="ivanChukhalo"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        description="Lorem ipsum dolor sit amet, consectetur adipisicing."
         song="Оксана Пекун - Я така ще молода"
       />
       <VideoSidebar 

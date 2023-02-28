@@ -1,7 +1,7 @@
 .videoFooter{
     position: relative;
     color: white;
-    bottom: 100px;
+    bottom: 120px;
     margin-left: 40px;
     display: flex;
 }
@@ -10,13 +10,18 @@
     flex: 1;
 }
 
+.videoFooter__text p {
+    width: 85%;
+    margin-bottom: 10px;
+}
+
 .videoFooter__record{
     animation: spinTheRecord infinite 5s linear;
     height: 35px;
     filter: invert(1);
     position: absolute;
-    bottom: -13px;
-    right: 10px;
+    bottom: 25px;
+    right: 24px;
 }
 
 .videoFooter__icon{
