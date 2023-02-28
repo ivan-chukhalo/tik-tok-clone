@@ -1,7 +1,7 @@
 .videoFooter{
     position: relative;
     color: white;
-    bottom: 200px;
+    bottom: 100px;
     margin-left: 40px;
     display: flex;
 }
@@ -10,17 +10,13 @@
     flex: 1;
 }
 
-.videoFooter__text > p {
-    padding-bottom: 20px;
-}
-
 .videoFooter__record{
     animation: spinTheRecord infinite 5s linear;
-    height: 50px;
+    height: 35px;
     filter: invert(1);
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -13px;
+    right: 10px;
 }
 
 .videoFooter__icon{
@@ -30,11 +26,7 @@
 .videoFooter__ticker > .ticker{
     height: fit-content;
     margin-left: 30px;
-    width: 60%;
-}
-
-.videoFooter__text > h3{
-    padding-bottom: 20px;
+    width: 80%;
 }
 
 .videoFooter__ticker h1 {
@@ -49,5 +41,3 @@
         transform: rotate(360deg);
     }
 }
-
-
