@@ -3,7 +3,15 @@ import "./Video.css";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 
-export default function Video() {
+export default function Video({
+  url,
+  channel,
+  description,
+  song,
+  likes,
+  messages,
+  shares,
+}) {
   const [playing, setPlaying] = React.useState(false);
   const videoRef = useRef(null);
   const onVideoPress = () => {
@@ -18,7 +26,7 @@ export default function Video() {
   return (
     <div className="video">
       <video
-        src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_20MB.mp4"
+        src={url}
         className="video__player"
         loop
         autoPlay
@@ -26,14 +34,11 @@ export default function Video() {
         onClick={onVideoPress}
       ></video>
       <VideoFooter
-        channel="ivanChukhalo"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing."
-        song="Оксана Пекун - Я така ще молода"
+        channel={channel}
+        description={description}
+        song={song}
       />
-      <VideoSidebar 
-        likes={574} 
-        messages={113} 
-        shares={98} />
+      <VideoSidebar likes={likes} messages={messages} shares={shares} />
     </div>
   );
 }
