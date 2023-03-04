@@ -1,46 +1,39 @@
+import React from "react";
+import db from "./firebase";
+import { collection, getDocs } from "firebase/firestore/lite";
+import Video from "./Video";
 import "./App.css";
-import Video from "./Video"
 
 function App() {
+  const [videos, setVideos] = React.useState([]);
+
+  async function getVideos(db) {
+    const videosCollection = collection(db, "videos");
+    const videoSnapshot = await getDocs(videosCollection);
+    const videosList = videoSnapshot.docs.map((doc) => doc.data());
+    setVideos(videosList);
+  }
+
+  React.useEffect(() => {
+    getVideos(db);
+  }, []);
+
+  console.log(videos);
   return (
     <div className="app">
       <div className="app__videos">
-        <Video 
-          url="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_20MB.mp4"
-          channel="francheskadeer"
-          description="Sunny mood"
-          song="U2 - With Or Without You"
-          likes={984}  
-          messages={541}
-          shares={564}  
-        />
-        <Video 
-          url="https://test-videos.co.uk/vids/jellyfish/mp4/h264/360/Jellyfish_360_10s_1MB.mp4"
-          channel="lanadarcy"
-          description="POV, every single time"
-          song="Bruno Mars - Uptown Funk"
-          likes={2}  
-          messages={7}
-          shares={1}
-        />
-        <Video 
-          url="https://test-videos.co.uk/vids/sintel/mp4/av1/360/Sintel_360_10s_1MB.mp4"
-          channel="bigboy2009"
-          description="Bros before hoes"
-          song="Metallica - Ride the Lightning"
-          likes={11}  
-          messages={423}
-          shares={99}
-        />
-        <Video 
-          url="https://test-videos.co.uk/vids/sintel/mp4/av1/360/Sintel_360_10s_1MB.mp4"
-          channel="greenrat27"
-          description="A Gentleman In The Streets But A Freak In The Sheets"
-          song="George Michael - Careless Whisper"
-          likes={489}  
-          messages={109}
-          shares={3}
-        />
+        {videos.map((video) => (
+          <Video
+            url={video.url}
+            channel={video.channel}
+            description={video.description}
+            song={video.song}
+            likes={video.likes}
+            messages={video.messages}
+            shares={video.shares}
+            key={video.url}
+          />
+        ))}
       </div>
     </div>
   );

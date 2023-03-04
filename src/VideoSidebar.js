@@ -5,7 +5,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MessageIcon from "@mui/icons-material/Message";
 import ShareIcon from "@mui/icons-material/Share";
 
-export default function VideoSidebar({likes, shares, messages}) {
+export default function VideoSidebar({ likes, shares, messages }) {
   const [liked, setLiked] = React.useState(false);
 
   return (

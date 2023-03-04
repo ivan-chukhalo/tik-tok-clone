@@ -23,6 +23,7 @@ export default function Video({
       setPlaying(true);
     }
   };
+
   return (
     <div className="video">
       <video
@@ -33,11 +34,7 @@ export default function Video({
         ref={videoRef}
         onClick={onVideoPress}
       ></video>
-      <VideoFooter
-        channel={channel}
-        description={description}
-        song={song}
-      />
+      <VideoFooter channel={channel} description={description} song={song} />
       <VideoSidebar likes={likes} messages={messages} shares={shares} />
     </div>
   );
