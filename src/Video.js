@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import PropTypes from "prop-types";
 import "./Video.css";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
@@ -48,4 +49,14 @@ Video.defaultProps = {
   likes: 0,
   messages: 0,
   shares: 0
+}
+
+Video.propTypes = {
+  url: PropTypes.string.isRequired,
+  channel: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  song: PropTypes.string.isRequired,
+  likes: PropTypes.number.isRequired,
+  messages: PropTypes.number.isRequired,
+  shares: PropTypes.number.isRequired,
 }
