@@ -18,7 +18,6 @@ function App() {
     getVideos(db);
   }, []);
 
-  console.log(videos);
   return (
     <div className="app">
       <div className="app__videos">

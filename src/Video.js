@@ -39,3 +39,13 @@ export default function Video({
     </div>
   );
 }
+
+Video.defaultProps = {
+  url: "",
+  channel: "default channel",
+  description: "description",
+  song: "song",
+  likes: 0,
+  messages: 0,
+  shares: 0
+}
